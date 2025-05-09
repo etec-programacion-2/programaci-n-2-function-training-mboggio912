@@ -72,13 +72,20 @@ fun esAprobado(nota: Double): Boolean {
 
 // Etapa 2
 fun calcularPromedioTresNotas(nota1: Double, nota2: Double, nota3: Double): Double {
-    // Implementar aquí
-    return 0.0
+    var prom = nota1 + nota2 + nota3
+    prom = prom/3
+    return prom
 }
 
 fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String {
-    // Implementar aquí
-    return ""
+    val aprob = esAprobado(nota)
+    if (aprob == false){
+        return "El alumno $nombre $apellido no esta aprobado"
+    }
+    else {
+        return "El alumno $nombre $apellido esta aprobado"
+    }
+    
 }
 
 // Etapa 3
