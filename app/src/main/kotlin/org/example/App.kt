@@ -90,13 +90,22 @@ fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String 
 
 // Etapa 3
 fun calcularPromedioCurso(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    var suma = 0.0
+    for (i in notas.indices){
+    suma += notas[i]
+    }
+    val prom = suma / 5.0
+    return prom
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    // Implementar aquí
-    return emptyList()
+    val listaMutable = mutableListOf<String>()
+    for (i in notas.indices){
+        if (notas[i] >= 7){
+            listaMutable.add(nombres[i])
+        }
+    }
+    return listaMutable
 }
 
 // Etapa 4
