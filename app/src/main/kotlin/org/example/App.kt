@@ -110,21 +110,31 @@ fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<St
 
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
-    // Implementar aquí
-    return ""
+    return """
+        Nombre del alumno: $nombre
+        ${materias[0]}: ${notas[0]}
+        ${materias[1]}: ${notas[1]}
+        ${materias[2]}: ${notas[2]}
+    """.trimIndent()
+
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    val maximo = notas.max()       
+    return maximo
 }
 
 fun obtenerNotaMasBaja(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    val minimo = notas.min()       
+    return minimo
 }
 
 fun contarAprobados(notas: List<Double>): Int {
-    // Implementar aquí
-    return 0
+    var aprobados = 0
+    for (i in notas.indices){
+        if (notas[i] >= 7){
+            aprobados += 1
+        }
+    }
+    return aprobados
 }
